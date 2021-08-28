@@ -1,0 +1,119 @@
+@media (min-width: 992px) {
+  .nav {
+    width: 1000px;
+    margin: 0 auto;
+  }
+}
+.containerNav {
+  width: 100vw;
+  background-color: rosybrown;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 5rem;
+  transition: background-color 0.45s ease 0s;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.link a {
+  margin-left: 1rem;
+  font-family: "normal";
+  color: rgb(119, 119, 121);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.link a:hover {
+  color: white;
+}
+.active {
+  color: var(--white) !important;
+}
+.menuWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 50px;
+  height: 200px;
+}
+.line1 {
+  height: 4px;
+  width: 30px;
+  margin-top: 3px;
+  border-radius: 3px;
+  background-color: var(--white);
+}
+.line2 {
+  height: 4px;
+  width: 25px;
+  margin-top: 3px;
+  border-radius: 2px;
+  background-color: var(--white);
+}
+.line3 {
+  height: 4px;
+  width: 20px;
+  margin-top: 3px;
+  border-radius: 2px;
+  background-color: var(--white);
+}
+.brandLogo {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.brandText {
+  position: relative;
+  font-family: "Medium";
+  color: var(--white);
+  font-size: 1.2rem;
+}
+.brandText::before {
+  content: "frontendalif";
+}
+.circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  background-color: rgba(0, 132, 255, 1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -5px;
+  z-index: -1;
+}
+.innerCircle {
+  width: 10px;
+  height: 10px;
+  border-radius: 25px;
+  background-color: var(--white);
+  position: absolute;
+  bottom: 0;
+  right: -2px;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .link a {
+    font-size: 0.8rem;
+  }
+  .brandText::before {
+    content: "alif";
+  }
+}

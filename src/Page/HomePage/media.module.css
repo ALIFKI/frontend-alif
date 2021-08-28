@@ -1,0 +1,12 @@
+@media (min-width: 992px) {
+  .contain {
+    width: 1000px !important;
+    margin: 0px auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .description {
+    flex-basis: 100%;
+  }
+}

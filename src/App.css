@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "normal";
+  src: url("./Assets/Fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "medium";
+  src: url("./Assets/Fonts/Poppins/Poppins-Medium.ttf");
+}
+:root {
+  --primary: rgb(21, 20, 24);
+  --secondary: rgb(135, 57, 250);
+  --accent: rgb(119, 119, 121);
+  --white: rgb(255, 255, 255);
+  --diamond-color: rgb(30, 30, 30);
+}
+body {
+  background-color: var(--primary);
+}
+body::-webkit-scrollbar {
+  display: none;
+}
