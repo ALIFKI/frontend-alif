@@ -1,14 +1,22 @@
 @import url("./media.module.css");
 
+.content {
+  overflow: hidden;
+}
+
 .contain {
   padding: 0 1rem;
+  overflow: hidden;
 }
+
 .bg {
   background-color: var(--primary);
 }
+
 .diamond {
   transform: scale(1.3) translateX(0);
 }
+
 .diamondxl {
   position: absolute;
   top: -120px;
@@ -17,6 +25,7 @@
   height: 900px;
   transition: transform 0.25s ease 0s;
 }
+
 .diamondsm {
   position: absolute;
   /* top: 100px; */
@@ -34,6 +43,7 @@
   height: 100px;
   transition: transform 0.25s ease 0s;
 }
+
 .diamondmd2 {
   position: absolute;
   top: 400px;
@@ -63,6 +73,7 @@
   overflow: hidden;
   height: 2400px;
 }
+
 .About {
   padding-top: 10rem;
   align-items: center;
@@ -70,19 +81,23 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .description {
   flex-basis: 50%;
   color: var(--white);
   font-family: "normal";
 }
+
 .description .title {
   font-size: 2.7rem;
   margin-bottom: 0.2rem;
 }
+
 .description .span {
   color: var(--accent);
   font-size: 1.5rem;
 }
+
 .image {
   height: 250px;
   width: 250px;
@@ -91,11 +106,13 @@
   justify-content: flex-start;
   align-items: center;
 }
+
 .profileImage {
   justify-content: center;
   align-items: center;
   display: flex;
 }
+
 .divide {
   position: absolute;
   top: 250px;
@@ -106,18 +123,22 @@
   transition: transform 0.25s ease 0s;
   transform: scale(1) translateX(5%);
 }
+
 .IconMenuSocial {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
 }
+
 .stickyRight {
   right: 0;
 }
+
 .darkIcon {
   color: #333333 !important;
 }
+
 .iconSocial {
   height: 4.5rem;
   width: 5rem;
@@ -126,11 +147,13 @@
   align-items: center;
   display: flex;
 }
+
 .iconSocial img {
   height: 1.6rem;
   width: 1.6rem;
   cursor: pointer;
 }
+
 .scrollCircle {
   height: 3rem;
   width: 3rem;
@@ -140,11 +163,13 @@
   justify-content: center;
   align-items: center;
 }
+
 .scrollY {
   margin-left: 1rem;
   color: var(--white);
   font-family: "normal";
 }
+
 .sideMenu {
   position: fixed;
   left: 0;
@@ -152,13 +177,14 @@
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  z-index: 99;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.3s linear, opacity 0.3s linear;
 }
+
 .wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   width: 300px;
@@ -166,8 +192,9 @@
   right: 0;
   transform: translateX(300px);
   transition: transform 0.6s;
-  z-index: 11;
+  z-index: 100;
 }
+
 .shake {
   animation: shake 2s infinite linear;
   cursor: pointer;
@@ -176,12 +203,15 @@
 .slidetoLeft {
   transform: translateX(0);
 }
+
 .slidetoRight {
   animation: slideRight 0.7s ease linear;
 }
+
 .disapear {
   animation: shadowdis 0.8s ease-out;
 }
+
 .shadow {
   animation: shadow 0.8s ease-out;
   visibility: visible;
@@ -192,6 +222,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(300px);
   }
@@ -201,6 +232,7 @@
   0% {
     transform: translateX(300px);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -210,6 +242,7 @@
   0% {
     background-color: rgba(0, 0, 0, 0.5);
   }
+
   100% {
     background-color: rgba(0, 0, 0, 0);
   }
@@ -219,6 +252,7 @@
   0% {
     background-color: rgba(0, 0, 0, 0);
   }
+
   100% {
     background-color: rgba(0, 0, 0, 0.5);
   }
@@ -229,6 +263,7 @@
     transform: translateY(0.8rem);
   }
 }
+
 @media (min-width: 992px) {
   .contain {
     width: 1000px !important;
@@ -241,10 +276,12 @@
     flex-basis: 100%;
     text-align: center;
   }
+
   .profileImage {
     margin-top: 2rem;
     flex-basis: 100%;
   }
+
   .profileImage .image {
     height: 200px;
     width: 200px;
@@ -260,15 +297,18 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .text {
   width: 50%;
 }
+
 .Image {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
+
 .item {
   position: relative;
   width: 40%;
@@ -276,6 +316,7 @@
   align-items: center;
   height: 24rem;
 }
+
 .video {
   height: 336px;
   width: 150px;
@@ -284,11 +325,13 @@
   right: 40%;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
 .picture {
   height: 306px;
   width: 150px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
 .text p {
   font-family: "normal";
 }

@@ -4,14 +4,16 @@
     margin: 0 auto;
   }
 }
+
 .containerNav {
   width: 100vw;
   background-color: rosybrown;
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 98;
 }
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -20,12 +22,14 @@
   height: 5rem;
   transition: background-color 0.45s ease 0s;
 }
+
 .link {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
+
 .link a {
   margin-left: 1rem;
   font-family: "normal";
@@ -33,12 +37,15 @@
   text-decoration: none;
   font-size: 1rem;
 }
+
 .link a:hover {
   color: white;
 }
+
 .active {
   color: var(--white) !important;
 }
+
 .menuWrapper {
   display: flex;
   justify-content: center;
@@ -47,6 +54,7 @@
   width: 50px;
   height: 200px;
 }
+
 .line1 {
   height: 4px;
   width: 30px;
@@ -54,6 +62,7 @@
   border-radius: 3px;
   background-color: var(--white);
 }
+
 .line2 {
   height: 4px;
   width: 25px;
@@ -61,6 +70,7 @@
   border-radius: 2px;
   background-color: var(--white);
 }
+
 .line3 {
   height: 4px;
   width: 20px;
@@ -68,21 +78,25 @@
   border-radius: 2px;
   background-color: var(--white);
 }
+
 .brandLogo {
   justify-content: center;
   align-items: center;
   position: relative;
   cursor: pointer;
 }
+
 .brandText {
   position: relative;
   font-family: "Medium";
   color: var(--white);
   font-size: 1.2rem;
 }
+
 .brandText::before {
   content: "frontendalif";
 }
+
 .circle {
   width: 35px;
   height: 35px;
@@ -94,6 +108,7 @@
   right: -5px;
   z-index: -1;
 }
+
 .innerCircle {
   width: 10px;
   height: 10px;
@@ -110,9 +125,11 @@
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
   .link a {
     font-size: 0.8rem;
   }
+
   .brandText::before {
     content: "alif";
   }
