@@ -118,7 +118,7 @@ class HomePage extends Component {
                             <div className={`d-flex flex-row justify-content-between ${Style.About}`}>
                                 <div className={`${Style.description}`}>
                                     <h3 className={`${Style.title}`}>
-                                        Hi, I'm Alif
+                                        Hi, I'm Alif Original
                                     </h3>
                                     <p className={`${Style.span}`}>Frontend Developer</p>
                                     <p className={`${Style.textAbout}`}>
