@@ -1,4 +1,7 @@
+import ReactDOM from 'react-dom';
 import React, { Component } from 'react'
+import { createRoot } from 'react-dom/client'
+import BubbleEffect from '../BubbleEffect'
 import Style from './style.module.css'
 class Navbar extends Component {
     constructor(props){
@@ -7,8 +10,16 @@ class Navbar extends Component {
             backgroundOpacity : 0
         }
     }
+    componentDidMount(){
+    }
     componentDidUpdate(){
         console.log(this.props.Scroll)
+    }
+
+    animateIt = ()=>{
+        const container = document.getElementById('react-bubble_effect-container')
+        ReactDOM.render(<BubbleEffect duration={1000} colorOne="rgb(21, 20, 24)" colorTwo={"white"}></BubbleEffect>,container)
+        setTimeout(() => ReactDOM.render(<></>,container), 1000);
     }
     render() {
         return (
@@ -23,9 +34,9 @@ class Navbar extends Component {
                     </div>
                 </div>
                 <div className={`${Style.link}`}>
-                    <a className={`${Style.active}`} href="http://" onClick={(e)=>{e.preventDefault();this.props.onAboutClick()}}>About</a>
-                    <a href="#" onClick={(e)=>{e.preventDefault();this.props.onWorkClick()}}>Work</a>
-                    <a href="http://">Home</a>
+                    <a className={`${Style.active}`} href="http://" onClick={(e)=>{e.preventDefault();this.animateIt();this.props.onAboutClick()}}>About</a>
+                    <a href="#" onClick={(e)=>{e.preventDefault();this.animateIt();this.props.onWorkClick();}}>Work</a>
+                    <a href="#" onClick={(e)=>{e.preventDefault();this.animateIt()}}>Home</a>
                 </div>
                 <div className={`${Style.menu}`} onClick={this.props.onMenuClick}>
                     <div className={`${Style.menuWrapper}`}>
