@@ -10,9 +10,12 @@ import ReactPlayer from 'react-player/youtube'
 import linkedin_dark from '../../Assets/Image/linked_dark.svg'
 import twitter_dark from '../../Assets/Image/twitter_dark.svg'
 import Slider from "react-slick";
-import image1 from '../../Assets/Image/1.jpg'
+import dimon1 from '../../Assets/Image/dimon1.png'
+import dimon from '../../Assets/Image/dimon.png'
 import image5 from '../../Assets/Image/5.jpg'
 import myVideo from '../../Assets/Image/video1.mp4'
+import Title from '../../Components/Title';
+import Btn from '../../Components/Button';
 
 
 class HomePage extends Component {
@@ -24,6 +27,9 @@ class HomePage extends Component {
             isMenuActive: false,
             isSticky: false,
         }
+
+        this.projectRef = React.createRef();
+        this.aboutRef = React.createRef();
 
     }
     componentDidMount() {
@@ -59,15 +65,27 @@ class HomePage extends Component {
     }
     render() {
         const settings = {
-            dots: true,
+            dots: false,
             infinite: true,
             speed: 500,
+            autoplay : true,
             slidesToShow: 1,
             slidesToScroll: 1,
             nextArrow: null,
             prevArrow: null,
             arrows: false,
             fade: true,
+            appendDots: dots => (
+                <div
+                style={{
+                    backgroundColor: "#ddd",
+                    borderRadius: "10px",
+                    padding: "10px"
+                }}
+                >
+                <ul style={{ margin: "0px" }}> {dots} </ul>
+                </div>
+            ),
         };
         return (
             <div className={`${Style.content}`}>
@@ -112,13 +130,19 @@ class HomePage extends Component {
                     </div>
                 </div>
                 <Container className={`m-auto ${Style.contain}`}>
-                    <Navbar Scroll={this.state.scrollY} onMenuClick={this._menu}></Navbar>
+                    <Navbar 
+                        Scroll={this.state.scrollY} 
+                        onMenuClick={this._menu} 
+                        onWorkClick={()=>{this.projectRef.current.scrollIntoView({block: 'center',behavior: "smooth"})}}
+                        onAboutClick={()=>{this.aboutRef.current.scrollIntoView({block: 'center',behavior: "smooth"})}}
+                    >
+                    </Navbar>
                     <Row style={{ height: '100vh' }}>
-                        <Col md="12">
+                        <Col md="12" ref={this.aboutRef}>
                             <div className={`d-flex flex-row justify-content-between ${Style.About}`}>
                                 <div className={`${Style.description}`}>
                                     <h3 className={`${Style.title}`}>
-                                        Hi, I'm Alif <a href='dulurkito://forgotpassword/dsadD9292'>Link to app</a>
+                                        Hi, I'm Alif
                                     </h3>
                                     <p className={`${Style.span}`}>Frontend Developer</p>
                                     <p className={`${Style.textAbout}`}>
@@ -145,7 +169,12 @@ class HomePage extends Component {
                             </div>
                         </Col>
                     </Row>
-                    <Row style={{ height: '100vh' }} className="justify-content-center align-items-center">
+                    <Row className="justify-content-center align-items-center" ref={this.projectRef}>
+                        <Col md="12">
+                            <div>
+                                <Title>Project</Title>
+                            </div>
+                        </Col>
                         <Col md="12">
                             <Slider {...settings}>
                                 <div className={`${Style.sliderItem}`}>
@@ -168,22 +197,24 @@ class HomePage extends Component {
                                         </div>
                                     </div>
                                     <div className={`${Style.text}`}>
-                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae iure corporis magni nobis quod temporibus officia vero officiis exercitationem inventore, reprehenderit, assumenda sequi commodi totam dolore vitae. Reiciendis, atque necessitatibus.</p>
+                                        <p>is a chat application with a find friends nearby feature, which is made using React Native and also express js,You can see this project in the following link</p>
+                                        <Btn>Want Demo?</Btn>
                                     </div>
                                 </div>
-                                {/* <div className={`${Style.sliderItem}`}>
-                                <div className={`${Style.item}`}>
-                                    <div className={`${Style.video}`}>
-                                        <img src={image1} alt="" srcSet="" className={`${Style.Image}`} />
+                                <div className={`${Style.sliderItem}`}>
+                                    <div className={`${Style.item}`}>
+                                        <div className={`${Style.video}`}>
+                                            <img src={dimon1} alt="" srcSet="" className={`${Style.Image}`} />
+                                        </div>
+                                        <div className={`${Style.picture}`}>
+                                            <img src={dimon} alt="" srcSet="" className={`${Style.Image}`} />
+                                        </div>
                                     </div>
-                                    <div className={`${Style.picture}`}>
-                                        <img src={image5} alt="" srcSet="" className={`${Style.Image}`} />
+                                    <div className={`${Style.text}`}>
+                                        <p>It is a retail commerce application that can be used to buy products at several retail stores, including payments and transactions</p>
+                                        <Btn>Want Demo?</Btn>
                                     </div>
                                 </div>
-                                <div className={`${Style.text}`}>
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae iure corporis magni nobis quod temporibus officia vero officiis exercitationem inventore, reprehenderit, assumenda sequi commodi totam dolore vitae. Reiciendis, atque necessitatibus.</p>
-                                </div>
-                            </div> */}
                             </Slider>
                         </Col>
                     </Row>

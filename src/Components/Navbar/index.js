@@ -23,9 +23,9 @@ class Navbar extends Component {
                     </div>
                 </div>
                 <div className={`${Style.link}`}>
-                    <a className={`${Style.active}`} href="http://">About</a>
+                    <a className={`${Style.active}`} href="http://" onClick={(e)=>{e.preventDefault();this.props.onAboutClick()}}>About</a>
+                    <a href="#" onClick={(e)=>{e.preventDefault();this.props.onWorkClick()}}>Work</a>
                     <a href="http://">Home</a>
-                    <a href="http://">Work</a>
                 </div>
                 <div className={`${Style.menu}`} onClick={this.props.onMenuClick}>
                     <div className={`${Style.menuWrapper}`}>
