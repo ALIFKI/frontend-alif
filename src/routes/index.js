@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router,Switch,Route, BrowserRouter } from 'react-router-dom'
 import HomePage from '../Page/HomePage';
-import { WavyContainer, WavyLink } from "react-wavy-transitions";
+// import { WavyContainer, WavyLink } from "react-wavy-transitions";
 
 class Routes extends Component {
     constructor(props){

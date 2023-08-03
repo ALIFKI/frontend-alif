@@ -13,7 +13,6 @@ import Slider from "react-slick";
 import dimon1 from '../../Assets/Image/dimon1.png'
 import dimon from '../../Assets/Image/dimon.png'
 import image5 from '../../Assets/Image/5.jpg'
-import myVideo from '../../Assets/Image/video1.mp4'
 import Title from '../../Components/Title';
 import Btn from '../../Components/Button';
 
@@ -34,6 +33,10 @@ class HomePage extends Component {
     }
     componentDidMount() {
         window.addEventListener('scroll', this._handleScroll)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this._handleScroll)
     }
 
     _handleScroll = (event) => {
@@ -58,6 +61,7 @@ class HomePage extends Component {
             })
         }
     }
+    
     _menu = () => {
         this.setState({
             isMenuActive: !this.state.isMenuActive
@@ -216,6 +220,40 @@ class HomePage extends Component {
                                     </div>
                                 </div>
                             </Slider>
+                        </Col>
+                    </Row>
+                    <Row style={{marginTop : '15vh'}}>
+                        <Col md="12">
+                            <div className={`${Style.card}`}>
+                                <Row>
+                                    <Col md="6">
+                                        <div className='d-flex flex-column'>
+                                            <h4 className={Style.connectWithMe}>Connect With Me</h4>
+                                            <p className={`text-white`}>Satisfied with me? Please contact me</p>
+                                            <div>
+
+                                            </div>
+                                        </div>
+                                    </Col>
+                                    <Col md="6">
+                                        <div className={`${Style.form}`}>
+                                            <h5 className={`${Style.contactFormTitle}`}>Let’s make magic together</h5>
+                                            <div className={`${Style.formGroup}`}>
+                                                <input className={`${Style.inputClass}`} placeholder='Name'></input>
+                                            </div>
+                                            <div className={`${Style.formGroup}`}>
+                                                <input className={`${Style.inputClass}`} placeholder='Email'></input>
+                                            </div>
+                                            <div className={`${Style.formGroup}`}>
+                                                <textarea rows={5} className={`${Style.inputClass}`} placeholder='Message'></textarea>
+                                            </div>
+                                            <div className={`${Style.formGroup}float-left`}>
+                                                <Btn>Want Demo?</Btn>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </div>
                         </Col>
                     </Row>
                 </Container>
