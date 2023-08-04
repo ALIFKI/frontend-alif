@@ -382,3 +382,67 @@
 .formGroup {
   margin: 8px 16px;
 }
+
+
+.headerText {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.listItemWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.cardItem {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3rem;
+}
+
+.separated {
+  margin-right: 1rem;
+  position: relative;
+}
+
+.roundItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: #3982F7;
+  font-weight: bolder;
+  color: #FFF;
+}
+
+.roundItem .span {
+  color: #FFF;
+  font-family: 'medium';
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cardDescription {
+  font-family: 'normal';
+  font-size: 14px;
+}
+
+.line {
+  height: 100%;
+  width: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #3982F7;
+  position: absolute;
+}
+
+.subTitle {
+  font-size: 0.9rem;
+  color: #333333;
+  margin-left: 0.5rem;
+}

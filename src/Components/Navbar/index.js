@@ -7,7 +7,8 @@ class Navbar extends Component {
     constructor(props){
         super(props)
         this.state = {
-            backgroundOpacity : 0
+            backgroundOpacity : 0,
+            activeLink : 'about'
         }
     }
     componentDidMount(){
@@ -16,10 +17,13 @@ class Navbar extends Component {
         console.log(this.props.Scroll)
     }
 
-    animateIt = ()=>{
+    animateIt = (section)=>{
         const container = document.getElementById('react-bubble_effect-container')
         ReactDOM.render(<BubbleEffect duration={1000} colorOne="rgb(21, 20, 24)" colorTwo={"white"}></BubbleEffect>,container)
         setTimeout(() => ReactDOM.render(<></>,container), 1000);
+        this.setState({
+            activeLink : section
+        })
     }
     
     render() {
@@ -35,10 +39,10 @@ class Navbar extends Component {
                     </div>
                 </div>
                 <div className={`${Style.link}`}>
-                    <a className={`${Style.active}`} href="http://" onClick={(e)=>{e.preventDefault();this.animateIt();this.props.onAboutClick()}}>About</a>
-                    <a href="#" onClick={(e)=>{e.preventDefault();this.animateIt();this.props.onWorkClick();}}>Skill</a>
-                    <a href="#" onClick={(e)=>{e.preventDefault();this.animateIt();this.props.onWorkClick();}}>Work</a>
-                    <a href="#" onClick={(e)=>{e.preventDefault();}}>Contact</a>
+                    <a className={`${this.state.activeLink == 'about' ? Style.active :""}`} href="http://" onClick={(e)=>{e.preventDefault();this.animateIt('about');this.props.onAboutClick()}}>About</a>
+                    {/* <a href="#" onClick={(e)=>{e.preventDefault();this.animateIt();this.props.onWorkClick();}}>Skill</a> */}
+                    <a className={`${this.state.activeLink == 'work' ? Style.active :""}`} href="#" onClick={(e)=>{e.preventDefault();this.animateIt('work');this.props.onWorkClick();}}>Work</a>
+                    <a className={`${this.state.activeLink == 'resume' ? Style.active :""}`} href="#" onClick={(e)=>{e.preventDefault();this.animateIt('resume');this.props.onExp()}}>Resume</a>
                 </div>
                 <div className={`${Style.menu}`} onClick={this.props.onMenuClick}>
                     <div className={`${Style.menuWrapper}`}>

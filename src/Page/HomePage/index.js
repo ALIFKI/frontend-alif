@@ -29,6 +29,8 @@ class HomePage extends Component {
 
         this.projectRef = React.createRef();
         this.aboutRef = React.createRef();
+        this.exp = React.createRef();
+
 
     }
     componentDidMount() {
@@ -122,10 +124,14 @@ class HomePage extends Component {
                 </div>
                 <div className={`${Style.IconMenuSocial} ${this.state.isSticky ? Style.stickyRight : null}`}>
                     <div className={`${Style.iconSocial} ${this.state.isSticky ? Style.darkIcon : null}`}>
+                        <a href="https://instagram.com">
                         <img src={this.state.isSticky ? ig_dark : ig} alt="" />
+                        </a>
                     </div>
                     <div className={`${Style.iconSocial} ${this.state.isSticky ? Style.darkIcon : null}`}>
+                        <a href="http://twitter.com">
                         <img src={this.state.isSticky ? twitter_dark : twitter} style={{ color: 'red' }} alt="" />
+                        </a>
                     </div>
                     <div className={`${Style.iconSocial} ${this.state.isSticky ? Style.darkIcon : null}`}>
                         <a href="http://">
@@ -139,6 +145,8 @@ class HomePage extends Component {
                         onMenuClick={this._menu} 
                         onWorkClick={()=>{this.projectRef.current.scrollIntoView({block: 'center',behavior: "smooth"})}}
                         onAboutClick={()=>{this.aboutRef.current.scrollIntoView({block: 'center',behavior: "smooth"})}}
+                        onExp={()=>{this.exp.current.scrollIntoView({block: 'center',behavior: "smooth"})}}
+
                     >
                     </Navbar>
                     <Row style={{ height: '100vh' }}>
@@ -248,11 +256,94 @@ class HomePage extends Component {
                                                 <textarea rows={5} className={`${Style.inputClass}`} placeholder='Message'></textarea>
                                             </div>
                                             <div className={`${Style.formGroup}float-left`}>
-                                                <Btn>Want Demo?</Btn>
+                                                <Btn>Submit</Btn>
                                             </div>
                                         </div>
                                     </Col>
                                 </Row>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row style={{marginTop : '15vh'}}>
+                        <Col md="6" ref={this.exp}>
+                            <h2 className={`${Style.headerText}`}>
+                                Experiences
+                            </h2>
+                            <div className={`${Style.listItemWrapper}`}>
+                                <div className={`${Style.cardItem}`}>
+                                    <div className={`${Style.separated}`}>
+                                        <div className={`${Style.roundItem}`}>
+                                           Now
+                                        </div>
+                                        <div className={`${Style.line}`}>
+                                        </div>
+                                    </div>
+                                    <div className={`${Style.cardContent}`}>
+                                    <div className={`${Style.cardTitle} mb-2`}>
+                                        Fullstack Developer
+                                        <span className={`${Style.subTitle}`}> Roots Indonesia </span>
+                                    </div>
+                                    <div className={`${Style.cardDescription}`}>
+                                        Experienced frontend developer in the field of website and mobile application development. Mastering the Javascript programming language, especially for the React JS framework, React Native, Express JS and Laravel.collaborate with a team to build high standard and maintainable software
+                                    </div>
+                                    </div>
+                                </div>
+                                <div className={`${Style.cardItem}`}>
+                                    <div className={`${Style.separated}`}>
+                                        <div className={`${Style.roundItem}`}>
+                                           2020
+                                        </div>
+                                    </div>
+                                    <div className={`${Style.cardContent}`}>
+                                    <div className={`${Style.cardTitle} mb-2`}>
+                                        Web Developer <span className={`${Style.subTitle}`}> Dieng Cyber </span>
+                                    </div>
+                                    <div className={`${Style.cardDescription}`}>
+                                        build and maintain websites on servers, websites built using laravel and CSS bootstrap
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col md="6">
+                            <h2 className={`${Style.headerText}`}>
+                                Education
+                            </h2>
+                            <div className={`${Style.listItemWrapper}`}>
+                                <div className={`${Style.cardItem}`}>
+                                    <div className={`${Style.separated}`}>
+                                        <div className={`${Style.roundItem}`}>
+                                           2020
+                                        </div>
+                                        <div className={`${Style.line}`}>
+                                        </div>
+                                    </div>
+                                    <div className={`${Style.cardContent}`}>
+                                    <div className={`${Style.cardTitle} mb-2`}>
+                                        Arkademy 
+                                        <span className={`${Style.subTitle}`}> Fullstack Developer </span>
+                                    </div>
+                                    <div className={`${Style.cardDescription}`}>
+                                        learn full stack development using ExpressJS, React JS and React Native
+                                    </div>
+                                    </div>
+                                </div>
+                                <div className={`${Style.cardItem}`}>
+                                    <div className={`${Style.separated}`}>
+                                        <div className={`${Style.roundItem}`}>
+                                           2017
+                                        </div>
+                                    </div>
+                                    <div className={`${Style.cardContent}`}>
+                                    <div className={`${Style.cardTitle} mb-2`}>
+                                       Hight School
+                                        <span className={`${Style.subTitle}`}>Software engineering</span>
+                                    </div>
+                                    <div className={`${Style.cardDescription}`}>
+                                        Learn about basic programming such as C++, C#, etc. as well as learn the application development process
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
                         </Col>
                     </Row>
