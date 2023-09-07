@@ -176,7 +176,7 @@ class HomePage extends Component {
 
                                 </div>
                                 <div className={`${Style.scrollY}`}>
-                                    Scroll down Update from fork
+                                    Scroll down
                                 </div>
                             </div>
                         </Col>
