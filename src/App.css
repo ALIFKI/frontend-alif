@@ -7,6 +7,7 @@
   font-family: "medium";
   src: url("./Assets/Fonts/Poppins/Poppins-Medium.ttf");
 }
+
 :root {
   --primary: rgb(21, 20, 24);
   --secondary: rgb(135, 57, 250);
@@ -44,7 +45,7 @@ body::-webkit-scrollbar {
 
 .dots-class li::marker {
   display: none;
-  content: '';
+  content: "";
 }
 
 #react-bubbly-transitions__bubbles {
@@ -113,4 +114,14 @@ body::-webkit-scrollbar {
   font-family: inherit;
   font-size: 1rem;
   cursor: pointer;
+}
+
+/* src/Circle.css */
+.circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  pointer-events: none; /* This ensures the circle does not block mouse events */
 }
