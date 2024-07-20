@@ -148,6 +148,10 @@
   display: flex;
 }
 
+.bgWhiteSection {
+  background-color: #fbfbff;
+}
+
 .iconSocial img {
   height: 1.6rem;
   width: 1.6rem;
@@ -358,7 +362,7 @@
 }
 
 .contactFormTitle {
-  color: var(--white, #FFF);
+  color: var(--white, #fff);
   font-size: 1.5rem;
   font-family: Poppins;
   font-style: normal;
@@ -382,7 +386,6 @@
 .formGroup {
   margin: 8px 16px;
 }
-
 
 .headerText {
   font-size: 2rem;
@@ -412,14 +415,14 @@
   height: 100px;
   width: 100px;
   border-radius: 50px;
-  background-color: #3982F7;
+  background-color: #3982f7;
   font-weight: bolder;
-  color: #FFF;
+  color: #fff;
 }
 
 .roundItem .span {
-  color: #FFF;
-  font-family: 'medium';
+  color: #fff;
+  font-family: "medium";
 }
 
 .cardTitle {
@@ -428,7 +431,7 @@
 }
 
 .cardDescription {
-  font-family: 'normal';
+  font-family: "normal";
   font-size: 14px;
 }
 
@@ -437,7 +440,7 @@
   width: 3px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #3982F7;
+  background-color: #3982f7;
   position: absolute;
 }
 

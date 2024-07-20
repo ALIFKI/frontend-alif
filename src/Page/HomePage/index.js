@@ -411,52 +411,6 @@ class HomePage extends Component {
             </Col>
           </Row>
           <Row style={{ marginTop: "15vh" }}>
-            <Col md="12">
-              <div className={`${Style.card}`}>
-                <Row>
-                  <Col md="6">
-                    <div className="d-flex flex-column">
-                      <h4 className={Style.connectWithMe}>Connect With Me</h4>
-                      <p className={`text-white`}>
-                        Satisfied with me? Please contact me
-                      </p>
-                      <div></div>
-                    </div>
-                  </Col>
-                  <Col md="6">
-                    <div className={`${Style.form}`}>
-                      <h5 className={`${Style.contactFormTitle}`}>
-                        Let’s make magic together
-                      </h5>
-                      <div className={`${Style.formGroup}`}>
-                        <input
-                          className={`${Style.inputClass}`}
-                          placeholder="Name"
-                        ></input>
-                      </div>
-                      <div className={`${Style.formGroup}`}>
-                        <input
-                          className={`${Style.inputClass}`}
-                          placeholder="Email"
-                        ></input>
-                      </div>
-                      <div className={`${Style.formGroup}`}>
-                        <textarea
-                          rows={5}
-                          className={`${Style.inputClass}`}
-                          placeholder="Message"
-                        ></textarea>
-                      </div>
-                      <div className={`${Style.formGroup}float-left`}>
-                        <Btn>Submit</Btn>
-                      </div>
-                    </div>
-                  </Col>
-                </Row>
-              </div>
-            </Col>
-          </Row>
-          <Row style={{ marginTop: "15vh" }}>
             <Col md="6" ref={this.exp}>
               <h2 className={`${Style.headerText}`}>Experiences</h2>
               <div className={`${Style.listItemWrapper}`}>
@@ -543,6 +497,56 @@ class HomePage extends Component {
             </Col>
           </Row>
         </Container>
+        <div className={`${Style.bgWhiteSection}`}>
+          <Container className={`m-auto ${Style.contain}`}>
+            <Row style={{ marginTop: "15vh" }}>
+              <Col md="12">
+                <div className={`${Style.card}`}>
+                  <Row>
+                    <Col md="6">
+                      <div className="d-flex flex-column">
+                        <h4 className={Style.connectWithMe}>Connect With Me</h4>
+                        <p className={`text-white`}>
+                          Satisfied with me? Please contact me
+                        </p>
+                        <div></div>
+                      </div>
+                    </Col>
+                    <Col md="6">
+                      <div className={`${Style.form}`}>
+                        <h5 className={`${Style.contactFormTitle}`}>
+                          Let’s make magic together
+                        </h5>
+                        <div className={`${Style.formGroup}`}>
+                          <input
+                            className={`${Style.inputClass}`}
+                            placeholder="Name"
+                          ></input>
+                        </div>
+                        <div className={`${Style.formGroup}`}>
+                          <input
+                            className={`${Style.inputClass}`}
+                            placeholder="Email"
+                          ></input>
+                        </div>
+                        <div className={`${Style.formGroup}`}>
+                          <textarea
+                            rows={5}
+                            className={`${Style.inputClass}`}
+                            placeholder="Message"
+                          ></textarea>
+                        </div>
+                        <div className={`${Style.formGroup}float-left`}>
+                          <Btn>Submit</Btn>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </div>
     );
   }
