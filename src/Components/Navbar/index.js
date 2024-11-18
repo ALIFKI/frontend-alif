@@ -10,11 +10,39 @@ class Navbar extends Component {
       backgroundOpacity: 0,
       activeLink: "about",
     };
+
+    this.menuRef = React.createRef();
   }
-  componentDidMount() {}
+  componentDidMount() {
+    this.menuRef.current.addEventListener("mouseover", this.handleMenuHover);
+    this.menuRef.current.addEventListener("mouseout", this.handleMenuLeave);
+  }
   componentDidUpdate() {
     console.log(this.props.Scroll);
   }
+
+  handleMenuHover = () => {
+    const circleElement = document.getElementsByClassName(
+      `circle`
+    );
+    for (let index = 0; index < circleElement.length; index++) {
+      const element = circleElement[index];
+      element.style.transform = 'scale(3)'
+      element.style.transition = "transform 0.3s ease";
+      element.style.zIndex = "90";
+
+    }
+  };
+
+  handleMenuLeave = () => {
+    const circleElement = document.getElementsByClassName(`circle`);
+    for (let index = 0; index < circleElement.length; index++) {
+      const element = circleElement[index];
+      element.style.transform = "scale(1)";
+      element.style.transition = "transform 0.3s ease";
+      element.style.zIndex = "100";
+    }
+  };
 
   animateIt = (section) => {
     const container = document.getElementById("react-bubble_effect-container");
@@ -88,7 +116,11 @@ class Navbar extends Component {
               Resume
             </a>
           </div>
-          <div className={`${Style.menu}`} onClick={this.props.onMenuClick}>
+          <div
+            className={`${Style.menu}`}
+            onClick={this.props.onMenuClick}
+            ref={this.menuRef}
+          >
             <div className={`${Style.menuWrapper}`}>
               <svg
                 width="24"

@@ -5,6 +5,11 @@
   }
 }
 
+.menu {
+  z-index: 101;
+  position: relative;
+}
+
 .containerNav {
   width: 100vw;
   background-color: rosybrown;

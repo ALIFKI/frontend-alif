@@ -6,13 +6,31 @@ const Circle = () => {
 
   useEffect(() => {
     const handleMouseMove = (event) => {
-      setPosition({
-        x: event.clientX - 25, // Adjusting for half the circle's width
-        y: event.clientY - 25, // Adjusting for half the circle's height
-      });
+      const circleElement = document.getElementsByClassName(`circle`);
+      for (let index = 0; index < circleElement.length; index++) {
+        const element = circleElement[index];
+        element.style.height = "20px";
+        element.style.width = "20px";
+        element.style.transition = "height 0.5s ease,width 0.5s ease";
+      }
+      const x = (event.clientX - 10 )+ window.scrollX;
+      const y = (event.clientY - 10)+ window.scrollY;
+      setPosition({ x, y });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove,{passive : true});
+    window.addEventListener("scroll",(event)=>{
+      const circleElement = document.getElementsByClassName(`circle`);
+      for (let index = 0; index < circleElement.length; index++) {
+        const element = circleElement[index];
+        element.style.height = "0px";
+        element.style.width = "0px";
+        element.style.transition = "height 0.5s ease,width 0.5s ease";
+
+      }
+    },{
+      passive : true
+    })
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -22,7 +40,7 @@ const Circle = () => {
   return (
     <div
       className="circle"
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      style={{ left: `${position.x}px`, top: `${position.y}px`,zIndex : 100 }}
     />
   );
 };

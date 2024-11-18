@@ -38,6 +38,7 @@ class HomePage extends Component {
     });
 
     window.addEventListener("scroll", this._handleScroll);
+    window.addEventListener("mousemove", this.handleMouseMove);
   }
 
   componentWillUnmount() {

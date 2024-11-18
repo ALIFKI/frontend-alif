@@ -122,9 +122,24 @@ body::-webkit-scrollbar {
 /* src/Circle.css */
 .circle {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(0, 132, 255, 0);
+  width: 20px;
+  height: 20px;
+  background-color: rgba(22, 130, 230, 100);
   border-radius: 50%;
-  pointer-events: none; /* This ensures the circle does not block mouse events */
+  pointer-events: none;
+  transition: all 200ms;
+}
+
+.animate-circle-leave {
+  animation-name: circle-leave;
+  animation-duration: 300ms;
+}
+
+@keyframes circle-leave {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 0;
+  }
 }
