@@ -549,7 +549,7 @@ class HomePage extends Component {
               </Col>
             </Row>
           </Container>
-          <Container>
+          <Container fluid>
             <Row>
               <Col md="12" className="p-0 mt-10">
                 <div className="w-full h-[80px] md:h-[90px] xl:h-[90px] bg-[rgb(47,46,52)] flex justify-center items-center">
