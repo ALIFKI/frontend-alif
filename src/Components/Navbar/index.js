@@ -115,6 +115,15 @@ class Navbar extends Component {
             >
               Resume
             </a>
+            <a
+              className={`${
+                this.state.activeLink == "blog" ? Style.active : ""
+              }`}
+              href="https://blog.frontendalif.my.id"
+              target="_blank"
+            >
+              Blog
+            </a>
           </div>
           <div
             className={`${Style.menu}`}

@@ -305,6 +305,11 @@
 
 .text {
   width: 50%;
+  gap: 10px;
+}
+
+.text p{
+  margin-bottom: 2rem;
 }
 
 .Image {

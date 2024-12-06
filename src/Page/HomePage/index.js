@@ -375,7 +375,7 @@ class HomePage extends Component {
                       which is made using React Native and also express js,You
                       can see this project in the following link
                     </p>
-                    <Btn>Want Demo?</Btn>
+                    <Btn>Demo?</Btn>
                   </div>
                 </div>
                 <div className={`${Style.sliderItem}`}>
@@ -403,7 +403,7 @@ class HomePage extends Component {
                       buy products at several retail stores, including payments
                       and transactions
                     </p>
-                    <Btn>Want Demo?</Btn>
+                    <Btn>Demo?</Btn>
                   </div>
                 </div>
               </Slider>
