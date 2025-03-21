@@ -17,6 +17,7 @@ import Title from "../../Components/Title";
 import Btn from "../../Components/Button";
 import Circle from "../../Components/circle";
 import avatar from "../../Assets/Image/avatar.svg";
+import { FileText, GraduationCap, HelpCircle } from "lucide-react";
 
 class HomePage extends Component {
   constructor(props) {
@@ -79,12 +80,11 @@ class HomePage extends Component {
       infinite: true,
       speed: 500,
       autoplay: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToShow: 3,
+      slidesToScroll: 3,
       nextArrow: null,
       prevArrow: null,
       arrows: false,
-      fade: true,
       appendDots: (dots) => (
         <div
           style={{
@@ -333,6 +333,8 @@ class HomePage extends Component {
               </div>
             </Col>
           </Row>
+        </Container>
+        <Container className="mx-auto mt-10">
           <Row
             className="justify-content-center align-items-center px-7 md:px-4"
             ref={this.projectRef}
@@ -344,68 +346,47 @@ class HomePage extends Component {
             </Col>
             <Col md="12">
               <Slider {...settings}>
-                <div className={`${Style.sliderItem}`}>
-                  <div className={`${Style.item}`}>
-                    <div className={`${Style.video}`}>
-                      <ReactPlayer
-                        url={"https://youtu.be/UT467s5Ab9c"}
-                        controls={false}
-                        width="100%"
-                        height="100%"
-                        onPlay={() => {
-                          console.log("play");
-                        }}
-                        style={{ height: 100 }}
-                        playing
-                        loop
-                      />
+                {[1, 2, 3, 4, 5, 6].map((index) => {
+                  return (
+                    <div className="flex max-w-md px-2">
+                      <div className="rounded-xl overflow-hidden shadow-md bg-gradient-to-b from-gray-900 to-black border">
+                        {/* Top section with glowing icons */}
+                        <div className="relative h-64 p-6 flex flex-col items-center justify-center overflow-hidden"></div>
+
+                        {/* Bottom section with description */}
+                        <div className="bg-white p-6">
+                          <h2 className="text-black text-xl font-bold mb-4">
+                            SRI: AI-Powered School Registration Information{" "}
+                            {index}
+                            Assistant
+                          </h2>
+
+                          {/* Technology tags */}
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            <span className="px-3 py-1 bg-[#4087F7] text-gray-200 text-sm rounded-full">
+                              OpenAI
+                            </span>
+                            <span className="px-3 py-1 bg-[#4087F7] text-gray-200 text-sm rounded-full">
+                              ExpressJs
+                            </span>
+                            <span className="px-3 py-1 bg-[#4087F7] text-gray-200 text-sm rounded-full">
+                              Typescript
+                            </span>
+                            <span className="px-3 py-1 bg-[#4087F7] text-gray-200 text-sm rounded-full">
+                              WhatsApp API
+                            </span>
+                          </div>
+
+                          {/* Description */}
+                          <p className="text-gray-400 text-sm">
+                            SRI (School Registration Information Assistant) is
+                            an AI-powered chatbot developed as a Proof of Con...
+                          </p>
+                        </div>
+                      </div>
                     </div>
-                    <div className={`${Style.picture}`}>
-                      <img
-                        src={image5}
-                        alt=""
-                        srcSet=""
-                        className={`${Style.Image}`}
-                      />
-                    </div>
-                  </div>
-                  <div className={`${Style.text}`}>
-                    <p>
-                      is a chat application with a find friends nearby feature,
-                      which is made using React Native and also express js,You
-                      can see this project in the following link
-                    </p>
-                    <Btn>Demo?</Btn>
-                  </div>
-                </div>
-                <div className={`${Style.sliderItem}`}>
-                  <div className={`${Style.item}`}>
-                    <div className={`${Style.video}`}>
-                      <img
-                        src={dimon1}
-                        alt=""
-                        srcSet=""
-                        className={`${Style.Image}`}
-                      />
-                    </div>
-                    <div className={`${Style.picture}`}>
-                      <img
-                        src={dimon}
-                        alt=""
-                        srcSet=""
-                        className={`${Style.Image}`}
-                      />
-                    </div>
-                  </div>
-                  <div className={`${Style.text}`}>
-                    <p>
-                      It is a retail commerce application that can be used to
-                      buy products at several retail stores, including payments
-                      and transactions
-                    </p>
-                    <Btn>Demo?</Btn>
-                  </div>
-                </div>
+                  );
+                })}
               </Slider>
             </Col>
           </Row>
