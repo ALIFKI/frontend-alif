@@ -389,7 +389,7 @@ class HomePage extends Component {
         </Container>
         <Container className="mx-auto mt-10">
           <Row
-            className="justify-content-center align-items-center px-7 md:px-4"
+            className="justify-content-center align-items-center lg:px-7 md:px-4"
             ref={this.projectRef}
           >
             <Col md="12">
