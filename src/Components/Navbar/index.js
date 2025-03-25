@@ -63,8 +63,8 @@ class Navbar extends Component {
   render() {
     return (
       <div
-        className={`${Style.containerNav}`}
-        style={{ backgroundColor: `rgba(21, 20, 24,${this.props.Scroll})` }}
+        className={`${Style.containerNav} ${Style.glassMorphDark}`}
+        style={{ background: `rgba(21, 20, 24,${this.props.Scroll > 0 ? 0.9 : 0})` }}
       >
         <div className={`${Style.nav}`}>
           <div className={`${Style.brandLogo}`}>

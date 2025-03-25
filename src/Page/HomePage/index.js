@@ -6,18 +6,16 @@ import ig from "../../Assets/Image/instagram-logo.svg";
 import linkedin from "../../Assets/Image/linkedin.svg";
 import twitter from "../../Assets/Image/twitter.svg";
 import ig_dark from "../../Assets/Image/instagram_dark.svg";
-import ReactPlayer from "react-player/youtube";
 import linkedin_dark from "../../Assets/Image/linked_dark.svg";
+import porto1 from "../../Assets/Image/portofolio1.png";
+import porto2 from "../../Assets/Image/portofolio2.png";
+import porto3 from "../../Assets/Image/portofolio3.png";
 import twitter_dark from "../../Assets/Image/twitter_dark.svg";
 import Slider from "react-slick";
-import dimon1 from "../../Assets/Image/dimon1.png";
-import dimon from "../../Assets/Image/dimon.png";
-import image5 from "../../Assets/Image/5.jpg";
 import Title from "../../Components/Title";
 import Btn from "../../Components/Button";
 import Circle from "../../Components/circle";
 import avatar from "../../Assets/Image/avatar.svg";
-import { FileText, GraduationCap, HelpCircle } from "lucide-react";
 
 class HomePage extends Component {
   constructor(props) {
@@ -27,6 +25,35 @@ class HomePage extends Component {
       scale: 1.4,
       isMenuActive: false,
       isSticky: false,
+      list_project: [
+        {
+          id: 1,
+          name: "Adaremit : Top Remitance",
+          image: porto1,
+          stack: ["React Native", "TypeScript", "Express","IOS",'Android'],
+          description:
+            "Developed a cross-platform money transfer app using React Native for iOS and Android, enabling seamless currency exchange. A fully custom solution tailored to client needs.",
+          link: "https://www.google.com",
+        },
+        {
+          id: 2,
+          name: "Midaz Landing Page",
+          image: porto2,
+          stack: ["React JS", "TypeScript", "Express",'Next Js'],
+          description:
+            "Built a high-performance web app for Midaz Golf Club using Next.js, optimizing user experience with dynamic content and responsive design.",
+          link: "https://www.google.com",
+        },
+        {
+          id: 2,
+          name: "Amway e-Spring Landing Page",
+          image: porto3,
+          stack: ["React JS", "TypeScript", "Express", "HTML", "CSS", "Vite"],
+          description:
+            "Developed a web application for Amway's eSpring landing page using Vite.js and React.js, ensuring fast performance and an engaging user experience.",
+          link: "https://www.google.com",
+        },
+      ],
     };
 
     this.projectRef = React.createRef();
@@ -345,42 +372,41 @@ class HomePage extends Component {
               </div>
             </Col>
             <Col md="12">
+              {/* Portofolio Page */}
               <Slider {...settings}>
-                {[1, 2, 3, 4, 5, 6].map((index) => {
+                {this.state.list_project.map((item, index) => {
                   return (
-                    <div className="flex max-w-md px-2">
-                      <div className="rounded-xl overflow-hidden shadow-md bg-gradient-to-b from-gray-900 to-black border">
+                    <div className="flex max-w-md px-2 group">
+                      <div className="rounded-xl overflow-hidden hover:shadow-md transition-all duration-500 hover:shadow-[#4086f75a] bg-gradient-to-b from-gray-900 to-black border">
                         {/* Top section with glowing icons */}
-                        <div className="relative h-64 p-6 flex flex-col items-center justify-center overflow-hidden"></div>
+                        <div className="relative h-64 flex flex-col items-center justify-center overflow-hidden">
+                          <img
+                            src={item.image}
+                            className="object-coverer transition-transform duration-500 group-hover:scale-110"
+                            alt="porto1"
+                          ></img>
+                        </div>
 
                         {/* Bottom section with description */}
                         <div className="bg-white p-6">
                           <h2 className="text-black text-xl font-bold mb-4">
-                            SRI: AI-Powered School Registration Information{" "}
-                            {index}
-                            Assistant
+                            {item.name}
                           </h2>
 
                           {/* Technology tags */}
                           <div className="flex flex-wrap gap-2 mb-4">
-                            <span className="px-3 py-1 bg-[#4087F7] text-gray-200 text-sm rounded-full">
-                              OpenAI
-                            </span>
-                            <span className="px-3 py-1 bg-[#4087F7] text-gray-200 text-sm rounded-full">
-                              ExpressJs
-                            </span>
-                            <span className="px-3 py-1 bg-[#4087F7] text-gray-200 text-sm rounded-full">
-                              Typescript
-                            </span>
-                            <span className="px-3 py-1 bg-[#4087F7] text-gray-200 text-sm rounded-full">
-                              WhatsApp API
-                            </span>
+                            {item.stack.map((stck) => {
+                              return (
+                                <span className="px-3 py-1 bg-[#4087F7] text-gray-200 text-sm rounded-full">
+                                  {stck}
+                                </span>
+                              );
+                            })}
                           </div>
 
                           {/* Description */}
-                          <p className="text-gray-400 text-sm">
-                            SRI (School Registration Information Assistant) is
-                            an AI-powered chatbot developed as a Proof of Con...
+                          <p className="text-gray-400 text-sm max-h-10 mb-10">
+                            {item.description}
                           </p>
                         </div>
                       </div>
