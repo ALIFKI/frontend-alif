@@ -16,6 +16,7 @@ import Title from "../../Components/Title";
 import Btn from "../../Components/Button";
 import Circle from "../../Components/circle";
 import avatar from "../../Assets/Image/avatar.svg";
+import { ArrowLeftComponent,ArrowRightComponent } from "../../Components/Arrow";
 
 class HomePage extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class HomePage extends Component {
           id: 1,
           name: "Adaremit : Top Remitance",
           image: porto1,
-          stack: ["React Native", "TypeScript", "Express","IOS",'Android'],
+          stack: ["React Native", "TypeScript", "Express", "IOS", "Android"],
           description:
             "Developed a cross-platform money transfer app using React Native for iOS and Android, enabling seamless currency exchange. A fully custom solution tailored to client needs.",
           link: "https://www.google.com",
@@ -39,9 +40,18 @@ class HomePage extends Component {
           id: 2,
           name: "Midaz Landing Page",
           image: porto2,
-          stack: ["React JS", "TypeScript", "Express",'Next Js'],
+          stack: ["React JS", "TypeScript", "Express", "Next Js"],
           description:
             "Built a high-performance web app for Midaz Golf Club using Next.js, optimizing user experience with dynamic content and responsive design.",
+          link: "https://www.google.com",
+        },
+        {
+          id: 2,
+          name: "Amway e-Spring Landing Page",
+          image: porto3,
+          stack: ["React JS", "TypeScript", "Express", "HTML", "CSS", "Vite"],
+          description:
+            "Developed a web application for Amway's eSpring landing page using Vite.js and React.js, ensuring fast performance and an engaging user experience.",
           link: "https://www.google.com",
         },
         {
@@ -109,9 +119,8 @@ class HomePage extends Component {
       autoplay: true,
       slidesToShow: 3,
       slidesToScroll: 3,
-      nextArrow: null,
-      prevArrow: null,
-      arrows: false,
+      nextArrow: <ArrowRightComponent />,
+      prevArrow: <ArrowLeftComponent />,
       appendDots: (dots) => (
         <div
           style={{
@@ -399,7 +408,7 @@ class HomePage extends Component {
             </Col>
             <Col md="12">
               {/* Portofolio Page */}
-              <Slider {...settings}>
+              <Slider className="relative" {...settings}>
                 {this.state.list_project.map((item, index) => {
                   return (
                     <div className="flex max-w-md px-2 group">
